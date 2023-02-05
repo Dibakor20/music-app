@@ -21,24 +21,29 @@ const Sidebar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="list-unstyled">
             <div>
-              <li>
-                <Link className="nav-link text-white" to="/">
-                  <i className="fas fa-cart-plus"></i> Home
+            <li>
+                <Link className="nav-link" to="/">
+                  <h3 className="ro-title">Ro-Music</h3>
                 </Link>
               </li>
               <li>
-                <Link className="nav-link text-white" to="/search">
-                  <i className="fas fa-cart-plus"></i> Search
+                <Link className="nav-link" to="/">
+                <i className="fa-solid fa-house mx-2"></i> Home
                 </Link>
               </li>
               <li>
-                <Link className="nav-link text-white" to="/favourites">
-                  <i className="fas fa-cart-plus"></i>Favourites
+                <Link className="nav-link" to="/search">
+                <i className="fa-solid fa-magnifying-glass mx-2"></i> Search
                 </Link>
               </li>
               <li>
-                <Link className="nav-link text-white" to="/playlist">
-                  <i className="fas fa-cart-plus"></i>Playlists
+                <Link className="nav-link" to="/favourites">
+                <i className="fa-solid fa-star mx-2"></i>Favourites
+                </Link>
+              </li>
+              <li>
+                <Link className="nav-link" to="/playlist">
+                <i className="fa-solid fa-play mx-2"></i>Playlists
                 </Link>
               </li>
             </div>

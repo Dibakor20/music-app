@@ -1,27 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
 html{
   overflow-x: hidden;
 }
+li{
+  list-style: none !important;
+}
+.container{
+  max-width: 1800px !important;
+}
+.cardBg{
+  background: #fff;
+  border-radius: 2px;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgb(36 39 44 / 15%);
+  padding: 5px 10px 10px;
+  margin-top: 10px;
+}
 
 .musicCard {
-  /* background: #fff;
+  background: #fff;
   border-radius: 2px;
   border-radius: 2px;
   box-shadow: 0 1px 3px rgb(36 39 44 / 15%);
   padding: 15px 20px 20px;
-  margin-top: 40px; */
-  box-shadow: none;
-  border: 1px solid #f4f4f4;
-  border-radius: 0px 15px;
+  margin-top: 10px;
 }
 .card-img{
- height: 200px;
+ height: 150px;
 }
 .common-card {
   padding: 17px 17px 9px 19px;
   background: #fff;
   box-shadow: 0 1px 3px rgb(36 39 44 / 15%);
   border-radius: 2px;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 .layoutTitle {
   font-size: 20px;
@@ -33,15 +46,9 @@ html{
   color: #222428;
   font-size: 16px;
   text-align: center;
-  padding: 5px 0px;
+  padding: 0px 0px;
 }
-.viewAll {
-  padding-top: 15px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #529ec1;
-  cursor: pointer;
-}
+
 .searchBar{
   position: relative;
   left: 30%;

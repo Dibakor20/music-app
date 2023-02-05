@@ -9,7 +9,7 @@ const MusicCard = ({item}:IProps) => {
         <>
             <div className="musicCard">
 				<div>
-					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSir8QEJlLYhYX-r7ufpWN6uwhHIJw-qOvO3g&usqp=CAU" alt="" className="card-img" />
+					<img src="https://templates.iqonic.design/muzik/html/images/dashboard/feature-album/02.png" alt="" className="card-img" />
 				</div>
 				<div className="cardHolder">
 					<h3 className="musicTitle">patan</h3>
