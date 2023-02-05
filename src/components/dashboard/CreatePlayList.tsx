@@ -1,6 +1,26 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
+import { useDispatch } from "react-redux";
+import { AppDispatch, AppThunk } from "../../store/store";
+import { createPlayList } from "../../store/storeAction";
 
 const CreatePlayList = () => {
+  const [title, setTitle] = useState<string>("");
+  const [description, setDisription] = useState<string>("");
+
+  const dispatch = useDispatch<AppDispatch>();
+
+  const handleCreatePlaylist = () => {
+    if (title.trim()) {
+      const playlistData = {
+        title: title.trim(),
+        description,
+        songs: [],
+        id: Math.round(Math.random() * 9999999).toString(),
+      };
+      dispatch(createPlayList(playlistData));
+    }
+  };
+
   return (
     <>
       <button
@@ -9,7 +29,7 @@ const CreatePlayList = () => {
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
       >
-       Create New Playlist
+        Create New Playlist
       </button>
 
       <div
@@ -28,38 +48,45 @@ const CreatePlayList = () => {
                 <span aria-hidden="true">&times;</span>
               </button> */}
             </div>
-            <form method="post">
-              <div className="modal-body">
-                <div className="form-group my-3">
-                  <label htmlFor="title">Title</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="title"
-                    name="title"
-                    aria-describedby="nameHelp"
-                    placeholder="Enter Name"
-                  />
-                              </div>
-                              <div className="form-group my-3">
-                  <label htmlFor="description">Description</label>
-                  <textarea
-                    className="form-control"
-                    id="description"
-                    name="description"
-                    aria-describedby="nameHelp"
-                    placeholder="Enter Description"
-                  />
-                </div>
-                
-                
+
+            <div className="modal-body">
+              <div className="form-group my-3">
+                <label htmlFor="title">Title</label>
+                <input
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    setTitle(e.target.value)
+                  }
+                  type="text"
+                  className="form-control"
+                  id="title"
+                  name="title"
+                  aria-describedby="nameHelp"
+                  placeholder="Enter Name"
+                />
               </div>
-              <div className="modal-footer border-top-0 d-flex justify-content-center">
-                <button type="submit" className="btn btn-danger">
-                  Submit
-                </button>
+              <div className="form-group my-3">
+                <label htmlFor="description">Description</label>
+                <textarea
+                  onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+                    setTitle(e.target.value)
+                  }
+                  className="form-control"
+                  id="description"
+                  name="description"
+                  aria-describedby="nameHelp"
+                  placeholder="Enter Description"
+                />
               </div>
-            </form>
+            </div>
+            <div className="modal-footer border-top-0 d-flex justify-content-center">
+              <button
+                type="button"
+                onClick={handleCreatePlaylist}
+                className="btn btn-danger"
+              >
+                Submit
+              </button>
+            </div>
           </div>
         </div>
       </div>

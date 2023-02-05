@@ -1,7 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { ChangeEvent } from "react";
 
-const Navbar = () => {
+type NavbarProps = {
+  handleSearchQuery?: CallableFunction;
+}
+
+const Navbar = ({handleSearchQuery}:NavbarProps) => {
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -41,6 +46,7 @@ const Navbar = () => {
             </ul>
             <form className="d-flex">
               <input
+                onChange={(e:ChangeEvent<HTMLInputElement>)=>handleSearchQuery?.(e.target.value)}
                 className="form-control me-5"
                 type="search"
                 placeholder="Search"

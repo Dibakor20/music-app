@@ -1,9 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { getSongAsync } from "../../store/storeAction";
+import SongCard from "../card/SongCard";
 import UserPlayList from "../carousel/UserPlayList";
 import Navbar from "../dashboard/Navbar";
 import Sidebar from "../dashboard/Sidebar";
 
+export type SongProps = {
+  coverImg: string;
+  id: string;
+  songTitle: string;
+  url: string;
+  isFavourite?: boolean;
+};
+
 const Search = () => {
+  const [searchResult, setSearchResult] = useState<SongProps[]>([]);
+
+  const handleSearchQuery = async (value: string) => {
+    const response = await getSongAsync(value);
+    if (response) {
+      const allSongs = response.map((track: any) => {
+        const songData = {
+          coverImg: track?.track?.images?.coverart,
+          id: track?.track?.key,
+          songTitle: track?.track?.title,
+          url: track?.track?.url,
+          isFavourite: false,
+        };
+        return songData;
+      });
+      setSearchResult(allSongs);
+    }
+  };
+
   return (
     <>
       <div className="row">
@@ -11,10 +41,26 @@ const Search = () => {
           <Sidebar />
         </div>
         <div className="col-md-10 px-0">
-          <Navbar />
+          <Navbar handleSearchQuery={handleSearchQuery} />
 
           <div className="my-5">
-            <UserPlayList />
+            {searchResult.length ? (
+              <div className="row">
+                {searchResult.map((song) => (
+                  <div className="col-md-4">
+                    <SongCard
+                      coverImg={song?.coverImg}
+                      songTitle={song?.songTitle}
+                      url={song?.url}
+                      id={song?.id}
+                      isFavourite={song?.isFavourite}
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p>No song Found</p>
+            )}
           </div>
         </div>
       </div>
