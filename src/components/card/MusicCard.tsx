@@ -11,7 +11,7 @@ const MusicCard = ({title}:IProps) => {
         <>
             <div className="musicCard">
 				<div>
-				<Link to="/playListDetails"><img src="https://templates.iqonic.design/muzik/html/images/dashboard/feature-album/02.png" alt="" className="card-img" /></Link>	
+				<Link to={`/playListDetails/${title}`}><img src="https://templates.iqonic.design/muzik/html/images/dashboard/feature-album/02.png" alt="" className="card-img" /></Link>	
 				</div>
 				<div className="cardHolder">
                     <h3 className="musicTitle">{title}</h3>

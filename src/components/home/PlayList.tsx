@@ -15,7 +15,7 @@ const PlayList = () => {
           <Navbar />
           <UserPlayList />
           <div className="mt-5">
-            <CreatePlayList/>
+          <CreatePlayList/>
           </div>
         </div>
       </div>

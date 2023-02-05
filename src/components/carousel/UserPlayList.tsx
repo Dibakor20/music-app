@@ -5,57 +5,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import MusicCard from "../card/MusicCard";
 
-const musicData = [
-  {
-    id: 1,
-    title: "patan",
-    artist: "Visal",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSir8QEJlLYhYX-r7ufpWN6uwhHIJw-qOvO3g&usqp=CAU",
-  },
-  {
-    id: 2,
-    title: "patan",
-    artist: "Visal",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSir8QEJlLYhYX-r7ufpWN6uwhHIJw-qOvO3g&usqp=CAU",
-  },
-  {
-    id: 3,
-    title: "patan",
-    artist: "Visal",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSir8QEJlLYhYX-r7ufpWN6uwhHIJw-qOvO3g&usqp=CAU",
-  },
-  {
-    id: 4,
-    title: "patan",
-    artist: "Visal",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSir8QEJlLYhYX-r7ufpWN6uwhHIJw-qOvO3g&usqp=CAU",
-  },
-  {
-    id: 5,
-    title: "patan",
-    artist: "Visal",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSir8QEJlLYhYX-r7ufpWN6uwhHIJw-qOvO3g&usqp=CAU",
-  },
-  {
-    id: 3,
-    title: "patan",
-    artist: "Visal",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSir8QEJlLYhYX-r7ufpWN6uwhHIJw-qOvO3g&usqp=CAU",
-  },
-  {
-    id: 4,
-    title: "patan",
-    artist: "Visal",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSir8QEJlLYhYX-r7ufpWN6uwhHIJw-qOvO3g&usqp=CAU",
-  },
-  {
-    id: 5,
-    title: "patan",
-    artist: "Visal",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSir8QEJlLYhYX-r7ufpWN6uwhHIJw-qOvO3g&usqp=CAU",
-  },
-];
-
 const UserPlayList = () => {
   const allPlayList = useSelector(
     (state: RootState) => state.playlists.playlists

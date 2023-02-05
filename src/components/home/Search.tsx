@@ -16,7 +16,7 @@ export type SongProps = {
 
 const Search = () => {
   const [searchResult, setSearchResult] = useState<SongProps[]>([]);
-
+  console.log(searchResult)
   const handleSearchQuery = async (value: string) => {
     const response = await getSongAsync(value);
     if (response) {
@@ -43,7 +43,7 @@ const Search = () => {
         <div className="col-md-10 px-0">
           <Navbar handleSearchQuery={handleSearchQuery} />
 
-          <div className="my-5">
+          <div className="mt-2">
             {searchResult.length ? (
               <div className="row">
                 {searchResult.map((song) => (
@@ -59,7 +59,7 @@ const Search = () => {
                 ))}
               </div>
             ) : (
-              <p>No song Found</p>
+              <p className="text-center">No song Found please Search your favourite song</p>
             )}
           </div>
         </div>

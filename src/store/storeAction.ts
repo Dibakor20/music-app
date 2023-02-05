@@ -16,6 +16,7 @@ export const getSongAsync = async (query: string) => {
           
         const result = await axios(options)
         if (result.status === 200) {
+            console.log(result.data)
             return result.data.tracks.hits
         }
     }

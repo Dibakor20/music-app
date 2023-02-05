@@ -64,3 +64,8 @@ li{
 .detailsContent{
   padding: 15px 30px;
 }
+
+.song-icon i{
+  font-size: 22px;
+  margin-top: 18px;
+}
