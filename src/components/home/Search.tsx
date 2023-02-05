@@ -12,6 +12,7 @@ export type SongProps = {
   songTitle: string;
   url: string;
   isFavourite?: boolean;
+  mp3Url?:string
 };
 
 const Search = () => {
@@ -23,10 +24,11 @@ const Search = () => {
       const allSongs = response.map((track: any) => {
         const songData = {
           coverImg: track?.track?.images?.coverart,
-          id: track?.track?.key,
+          id:Math.round(Math.random()*999999),
           songTitle: track?.track?.title,
           url: track?.track?.url,
           isFavourite: false,
+          mp3Url:track?.track?.hub?.actions?.[1]?.uri
         };
         return songData;
       });
@@ -54,6 +56,7 @@ const Search = () => {
                       url={song?.url}
                       id={song?.id}
                       isFavourite={song?.isFavourite}
+                      mp3Url={song?.mp3Url}
                     />
                   </div>
                 ))}

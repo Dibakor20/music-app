@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import playListReducer from '../store/playlistSlice';
+import favouriteReducer from '../store/favouriteSlice';
 
 export const store = configureStore({
   reducer: {
-   playlists: playListReducer
+    playlists: playListReducer,
+    favourites: favouriteReducer,
   },
 });
 
