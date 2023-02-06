@@ -40,10 +40,7 @@ const UserPlayList = () => {
             {allPlayList.map((item) => (
               <>
                 <div className="image-container increase-size mx-2 pb-2">
-                  <MusicCard
-                    title={item?.title}
-                    id={item?.id}
-                  />
+                  <MusicCard title={item?.title} id={item?.id} />
                 </div>
               </>
             ))}

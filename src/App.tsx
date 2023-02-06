@@ -2,25 +2,64 @@
 import React from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Sidebar from "./components/dashboard/Sidebar";
 import Home from "./components/home/Home";
 import Search from "./components/home/Search";
 import Favourites from "./components/home/Favourites";
 import PlayList from "./components/home/PlayList";
 import PlayListDetails from "./pages/PlayListDetails";
+import { ReactKeycloakProvider } from "@react-keycloak/web";
+import keycloak from "./keycloak";
+import PrivateRoute from "./helpers/PrivateRoutes";
+import HomePage from "./pages/HomePage";
 
 function App() {
-
-  
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/favourites" element={<Favourites />} />
-        <Route path="/playlist" element={<PlayList />} />
-        <Route path="/playlistDetails/:title" element={<PlayListDetails />} />
-      </Routes>
+      <ReactKeycloakProvider authClient={keycloak}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/home"
+            element={
+              <PrivateRoute>
+                <Home />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/search"
+            element={
+              <PrivateRoute>
+                <Search />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/favourites"
+            element={
+              <PrivateRoute>
+                <Favourites />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/playlist"
+            element={
+              <PrivateRoute>
+                <PlayList />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/playlistDetails/:title"
+            element={
+              <PrivateRoute>
+                <PlayListDetails />
+              </PrivateRoute>
+            }
+          />
+        </Routes>
+      </ReactKeycloakProvider>
     </>
   );
 }

@@ -4,8 +4,6 @@ import "react-multi-carousel/lib/styles.css";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import FavouriteCard from "../card/FavouriteCard";
-import MusicCard from "../card/MusicCard";
-import SongCard from "../card/SongCard";
 
 const FavouritePlayList = () => {
   const allFavourite = useSelector(

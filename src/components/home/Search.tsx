@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 import { getSongAsync } from "../../store/storeAction";
 import SongCard from "../card/SongCard";
-import UserPlayList from "../carousel/UserPlayList";
-import Navbar from "../dashboard/Navbar";
-import Sidebar from "../dashboard/Sidebar";
+import Layout from "../Layout";
 
 export type SongProps = {
   coverImg: string;
@@ -38,14 +35,8 @@ const Search = () => {
 
   return (
     <>
-      <div className="row">
-        <div className="col-md-2 px-0">
-          <Sidebar />
-        </div>
-        <div className="col-md-10 px-0">
-          <Navbar handleSearchQuery={handleSearchQuery} />
-
-          <div className="mt-2">
+      <Layout handleSearchQuery={handleSearchQuery}>
+      <div className="mt-2">
             {searchResult.length ? (
               <div className="row">
                 {searchResult.map((song) => (
@@ -65,8 +56,7 @@ const Search = () => {
               <p className="text-center">No song Found please Search your favourite song</p>
             )}
           </div>
-        </div>
-      </div>
+      </Layout>
     </>
   );
 };

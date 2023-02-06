@@ -1,11 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { ChangeEvent } from "react";
+import { useKeycloak } from "@react-keycloak/web";
 
 type NavbarProps = {
   handleSearchQuery?: CallableFunction;
 }
 
-const Navbar = ({handleSearchQuery}:NavbarProps) => {
+const Navbar = ({ handleSearchQuery }: NavbarProps) => {
+  const { keycloak, initialized } = useKeycloak();
 
   return (
     <>
@@ -52,16 +54,22 @@ const Navbar = ({handleSearchQuery}:NavbarProps) => {
                 placeholder="Search"
                 aria-label="Search"
               />
-             
-              <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i className="fa-sharp fa-solid fa-user me-3"></i> 
-          </a>
-          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a className="dropdown-item" href="#">Debakor Acharjee</a></li>
-          </ul>
-        </li>
+
             </form>
+            <div className="hover:text-gray-200">
+
+                 {!!keycloak?.authenticated && (
+                   <button
+                     type="button"
+                     className="text-blue-800"
+                     onClick={() => keycloak?.logout({
+                      redirectUri: "http://localhost:3000",
+                    })}
+                   >
+                     Logout ({keycloak?.tokenParsed?.preferred_username})
+                   </button>
+                 )}
+               </div>
           </div>
         </div>
       </nav>
