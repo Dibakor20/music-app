@@ -19,7 +19,9 @@ const Home = () => {
         </div>
       ) : (
         <div>
-          
+          <h5 className="text-center mt-5 text-red">
+            No Playlist found! Please create a playlist first
+          </h5>
         </div>
       )}
     </Layout>

@@ -53,7 +53,7 @@ const Search = () => {
                 ))}
               </div>
             ) : (
-              <p className="text-center">No song Found please Search your favourite song</p>
+              <h5 className="text-center mt-5 text-red">No song Found ! please Search your favourite song</h5>
             )}
           </div>
       </Layout>

@@ -1,15 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
-html{
+html {
   overflow-x: hidden;
 }
-li{
+li {
   list-style: none !important;
 }
-.container{
+@media screen and (max-width: 550px) {
+  audio {
+    width: 115px !important;
+  }
+}
+.search-audio {
+  width: 220px !important;
+  display: block;
+  margin: 0 auto;
+  @media screen and (max-width: 550px) {
+    width: 115px !important;
+  }
+}
+.text-red {
+  color: #ff4545;
+}
+.pointer {
+  cursor: pointer;
+}
+.custom-btn {
+  height: 40px !important;
+}
+.container {
   max-width: 1800px !important;
 }
-.cardBg{
+.cardBg {
   background: #fff;
   border-radius: 2px;
   border-radius: 2px;
@@ -17,7 +39,6 @@ li{
   padding: 5px 10px 10px;
   margin-top: 10px;
 }
-
 .musicCard {
   background: #fff;
   border-radius: 2px;
@@ -26,8 +47,8 @@ li{
   padding: 15px 20px 20px;
   margin-top: 10px;
 }
-.card-img{
- height: 150px;
+.card-img {
+  height: 150px;
 }
 .common-card {
   padding: 17px 17px 9px 19px;
@@ -42,29 +63,29 @@ li{
   font-weight: 600;
   padding: 20px 0px;
 }
-.musicTitle{
+.musicTitle {
   color: #222428;
   font-size: 16px;
   text-align: center;
   padding: 0px 0px;
 }
 
-.searchBar{
+.searchBar {
   position: relative;
   left: 30%;
   top: 5%;
 }
 
-.detailsCard{
+.detailsCard {
   background: #fff;
   box-shadow: 0 4px 8px 0 rgb(36 39 44 / 15%);
   padding: 20px 0 20px;
 }
-.detailsContent{
+.detailsContent {
   padding: 15px 30px;
 }
 
-.song-icon i{
+.song-icon i {
   font-size: 22px;
   margin-top: 18px;
 }

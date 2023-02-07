@@ -1,12 +1,11 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { Link } from "react-router-dom";
-import './Sidebar.global.scss';
+import "./Sidebar.global.scss";
 
 const Sidebar = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg sidebar">
+      <nav className="navbar navbar-expand-lg sidebar d-none d-md-block">
         <button
           className="navbar-toggler"
           type="button"
