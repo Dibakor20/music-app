@@ -9,7 +9,6 @@ const FavouritePlayList = () => {
   const allFavourite = useSelector(
     (state: RootState) => state.favourites.favourite
   );
-  console.log(allFavourite,"testing");
 
   const responsive = {
     desktop: {

@@ -9,7 +9,6 @@ const UserPlayList = () => {
   const allPlayList = useSelector(
     (state: RootState) => state.playlists.playlists
   );
-  console.log(allPlayList);
 
   const responsive = {
     desktop: {

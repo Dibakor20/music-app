@@ -1,0 +1,44 @@
+.banner-content{
+    position: relative;
+    top: 40%;
+    bottom: 50%;
+  }
+  
+  .banner-title{
+    font-size: 52px;
+    text-transform: none;
+    color: #ffffff;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+  }
+  .banner{
+    text-align: center;
+  }
+  .banner-description{
+    color: white;
+    font-size: 1.5rem;
+  }
+ 
+  .header-background{
+    background-image: url("https://cdn.pixabay.com/photo/2013/11/03/08/05/cheers-204742_1280.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+  }
+  .login-button{
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #ff4545;
+    border-radius: 8px;
+    color: #fff!important;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 18px;
+    padding: 10px;
+    background: #ff4545;
+  }
+  
+  .login-button:hover{
+    background: #f80303;
+  }

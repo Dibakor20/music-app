@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import Navbar from "../components/dashboard/Navbar";
-import Sidebar from "../components/dashboard/Sidebar";
-import { AppDispatch, RootState } from "../store/store";
-import { makeFavourite } from "../store/storeAction";
+import Navbar from "../../components/dashboard/navbar/Navbar";
+import Sidebar from "../../components/dashboard/sidebar/Sidebar";
+import { AppDispatch, RootState } from "../../store/store";
+import { makeFavourite } from "../../store/storeAction";
 
 const PlayListDetails = () => {
   const [playing, setPlaying] = useState(false);
@@ -12,21 +12,21 @@ const PlayListDetails = () => {
   const { title } = useParams();
   const allPlayList = useSelector(
     (state: RootState) => state.playlists.playlists
-    );
-    const dispatch = useDispatch<AppDispatch>()
+  );
+  const dispatch = useDispatch<AppDispatch>();
 
-    const data = allPlayList.find((item) => item.title === title);
-    
-    const handleFavourite = (isFavourite:boolean,songId:string) => {
-        const dataPayload = {
-            isFavourite,
-            playListId: data?.id as string,
-            songId,
-        }
-        console.log(songId)
-        dispatch(makeFavourite(dataPayload))
-    }
-    console.log(allPlayList)
+  const data = allPlayList.find((item) => item.title === title);
+
+  const handleFavourite = (isFavourite: boolean, songId: string) => {
+    const dataPayload = {
+      isFavourite,
+      playListId: data?.id as string,
+      songId,
+    };
+    console.log(songId);
+    dispatch(makeFavourite(dataPayload));
+  };
+  console.log(allPlayList);
 
   return (
     <>
@@ -72,9 +72,16 @@ const PlayListDetails = () => {
                                 onPause={togglePlaying}
                               />
                             </th>
-                                <td>{item.songTitle}</td>
+                            <td>{item.songTitle}</td>
                             <td>
-                              <i onClick={()=>handleFavourite(!item.isFavourite,item.id)} className={`${item.isFavourite?"fa-solid":"fa-regular"} fa-star`}></i>
+                              <i
+                                onClick={() =>
+                                  handleFavourite(!item.isFavourite, item.id)
+                                }
+                                className={`${
+                                  item.isFavourite ? "fa-solid" : "fa-regular"
+                                } fa-star`}
+                              ></i>
                             </td>
                           </tr>
                         ))}

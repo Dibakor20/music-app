@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "./dashboard/Navbar";
-import Sidebar from "./dashboard/Sidebar";
+import Navbar from "./dashboard/navbar/Navbar";
+import Sidebar from "./dashboard/sidebar/Sidebar";
 
 type LayoutProps = {
   children: React.ReactNode;
